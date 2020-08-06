@@ -1,0 +1,50 @@
+.header {
+    background: red;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    justify-content: space-around;
+}
+
+.header__logo {
+    width: 100px;
+    margin: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 60px;
+}
+
+.header__nav {
+    flex: 0.3;
+    display: flex;
+    justify-content: space-around;
+}
+
+.header__search {
+    flex: 0.6;
+    height: 20px;
+}
+
+.header__field {
+    width: 100%;
+    border: none;
+    height: 20px;
+}
+
+.header__option {
+    color: white;
+    padding: 10px;
+}
+
+.header__logout {
+    background-color: rgb(133, 31, 31);
+    color: white;
+    border: solid white;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    &:hover {
+        background-color: rgb(18, 116, 59);
+    }
+}
