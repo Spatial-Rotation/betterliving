@@ -45,6 +45,9 @@ const Header = () => {
         <div className="header__option">
           <span>Calendar</span>
         </div>
+        <div className="header__option">
+          <span>Blogs</span>
+        </div>
       </div>
 
       <button className="header__logout">Logout</button>

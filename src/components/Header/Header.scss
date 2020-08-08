@@ -1,5 +1,5 @@
 .header {
-    background: red;
+    background: purple;
     position: sticky;
     display: flex;
     align-items: center;
@@ -16,13 +16,13 @@
 }
 
 .header__nav {
-    flex: 0.3;
+    flex: 0.4;
     display: flex;
     justify-content: space-around;
 }
 
 .header__search {
-    flex: 0.6;
+    flex: 0.5;
     height: 20px;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .header__logout {
-    background-color: rgb(133, 31, 31);
+    background-color: (#be5241dc);
     color: white;
     border: solid white;
     margin-right: 20px;
