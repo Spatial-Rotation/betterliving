@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
-import { ingredient_context } from "../Ingredient/IngredientForm";
+import { IngredientContextValue } from "../Ingredient/IngredientProvider";
+import { RecepieContextValue } from "../Recepies/RecepieProvider";
+import { Link, Redirect } from "react-router-dom";
 
 import "./Header.scss";
 import sortedliving from "./sortedliving.png";
@@ -24,41 +26,46 @@ const defaultProps = {};
 /**
  *
  */
-const Header = () => {
-  var ingredients = useContext(ingredient_context);
-  console.log("this", ingredients);
+function Header() {
+  const [{ ingredients }] = IngredientContextValue();
+  const [{ recepies }] = RecepieContextValue();
+
   return (
     <nav className="header">
-      <img className="header__logo" src={sortedliving} alt="better logo" />
+      <Link to="/">
+        <img className="header__logo" src={sortedliving} alt="better logo" />
+      </Link>
 
       <div className="header__search">
         <input className="header__field" type="text" />
       </div>
 
-      <div>{ingredients?.length}</div>
-
       <div className="header__nav">
-        <div className="header__option">
-          <span>Ingredients</span>
-        </div>
-        <div className="header__option">
-          <span>Recepies</span>
-        </div>
-        <div className="header__option">
-          <span>Lists</span>
-        </div>
-        <div className="header__option">
-          <span>Calendar</span>
-        </div>
-        <div className="header__option">
-          <span>Blogs</span>
-        </div>
+        <Link className="header__option" to="/ingredient">
+          Ingredients({ingredients?.length})
+        </Link>
+
+        <Link className="header__option" to="/recepie">
+          Receipes({recepies?.length})
+        </Link>
+
+        <Link className="header__option" to="/shoppinglist">
+          Lists()
+        </Link>
+
+        <Link className="header__option" to="/calendar">
+          Calendar
+        </Link>
+
+        <Link className="header__option" to="/about">
+          About
+        </Link>
       </div>
 
       <button className="header__logout">Logout</button>
     </nav>
   );
-};
+}
 
 // #endregion
 

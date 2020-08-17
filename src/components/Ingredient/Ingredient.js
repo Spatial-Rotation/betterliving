@@ -1,7 +1,15 @@
 import React, { useContext } from "react";
 
+import IngredientList from "./IngredientList";
+import IngredientForm from "./IngredientForm";
+
 function Ingredient() {
-  return <div>{/* List of ingredients */}</div>;
+  return (
+    <div>
+      <IngredientForm />
+      <IngredientList />
+    </div>
+  );
 }
 
 export default Ingredient;

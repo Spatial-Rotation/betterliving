@@ -1,15 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { ContextProvider } from "./components/Ingredient/IngredientForm";
+import {
+  initialIngredients,
+  ingredientreducer,
+} from "./components/Ingredient/IngredientForm";
+import {
+  initialRecepies,
+  recepiereducer,
+} from "./components/Recepies/RecepieForm";
+import { IngredientContextProvider } from "./components/Ingredient/IngredientProvider";
+import { RecepieContextProvider } from "./components/Recepies/RecepieProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ContextProvider>
-      <App />
-    </ContextProvider>
+    <BrowserRouter>
+      <IngredientContextProvider
+        reducer={ingredientreducer}
+        initialState={initialIngredients}
+      >
+        <RecepieContextProvider
+          reducer={recepiereducer}
+          initialState={initialRecepies}
+        >
+          <App />
+        </RecepieContextProvider>
+      </IngredientContextProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

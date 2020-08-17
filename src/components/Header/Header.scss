@@ -1,6 +1,5 @@
 .header {
-    background: purple;
-    position: sticky;
+    background: rgb(0, 1, 3);
     display: flex;
     align-items: center;
     height: 70px;
@@ -47,4 +46,8 @@
     &:hover {
         background-color: rgb(18, 116, 59);
     }
+}
+
+.header__ingredients {
+    color: white;
 }
